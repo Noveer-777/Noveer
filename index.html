@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>رحلتي مع HTML</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #607d8b, #455a64);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      direction: rtl;
+      transition: background 0.4s;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #121212, #1e1e1e);
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 400px;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark .card {
+      background: #1f1f1f;
+      color: #eee;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    body.dark h1 {
+      color: #90caf9;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    body.dark p {
+      color: #ccc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f1f1f1;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    body.dark ul li {
+      background: #2c2c2c;
+    }
+
+    .profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 15px 0;
+      border: 4px solid #ddd;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+    }
+
+    .btn-projects {
+      background: #2196f3;
+    }
+
+    .btn-toggle {
+      background: #9c27b0;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>رحلتي مع HTML</h1>
+
+    <h3>من أنا؟</h3>
+    <p>أنا شخص قررت أغير نفسي وأدخل عالم البرمجة خطوة بخطوة.</p>
+
+    <h3>أهدافي في 2026</h3>
+    <ul>
+      <li>تعلم HTML</li>
+      <li>تعلم CSS</li>
+      <li>تعلم JavaScript</li>
+      <li>تحقيق دخل من البرمجة</li>
+    </ul>
+
+    <h3>صورتي</h3>
+    <img class="profile" src="https://i.imgur.com/8Km9tLL.jpg">
+
+    <h3>تواصل معي</h3>
+    <div class="buttons">
+      <a class="btn btn-whatsapp"
+         href="https://wa.me/201501369699?text=السلام%20عليكم%20حابب%20اتواصل%20معك"
+         target="_blank">
+        واتساب
+      </a>
+
+      <a class="btn btn-projects" href="#">
+        مشاريعي
+      </a>
+    </div>
+
+    <button class="btn btn-toggle" onclick="toggleMode()">
+      تغيير الوضع
+    </button>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
