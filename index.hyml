@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Asmaa ♥️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  background:#fff;
+  width:100%;
+  max-width:360px;
+  padding:35px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+  color:#e91e63;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:14px;
+  color:#555;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+button{
+  margin-top:18px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#e91e63;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.msg{
+  margin-top:12px;
+  color:#e91e63;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>💖 Welcome</h1>
+  <p>
+    Enter your secret access  
+    <br>
+    <small>ادخلي كلمة السر الخاصة</small>
+  </p>
+
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+
+  <button onclick="login()">Enter</button>
+  <div class="msg" id="msg"></div>
+</div>
+
+<script>
+function login(){
+  const user = document.getElementById("user").value.trim();
+  const pass = document.getElementById("pass").value.trim();
+  const msg  = document.getElementById("msg");
+
+  if(user === "Asmaa" && pass === "2006.1.26"){
+    window.location.href = "gift.html";
+  }else{
+    msg.textContent = "❌ Not correct 💔 Try again";
+  }
+}
+</script>
+
+</body>
+</html>
