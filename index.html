@@ -1,165 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>رحلتي مع HTML</title>
+<meta charset="UTF-8">
+<title>Noveer Nakhal | Front-End Beginner</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #607d8b, #455a64);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      direction: rtl;
-      transition: background 0.4s;
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  direction:rtl;
+  padding:20px;
+}
 
-    body.dark {
-      background: linear-gradient(135deg, #121212, #1e1e1e);
-    }
+/* ===== Animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-    .card {
-      background: white;
-      width: 90%;
-      max-width: 400px;
-      padding: 25px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-      transition: background 0.4s, color 0.4s;
-    }
+.card{
+  background:#1e1e1e;
+  max-width:900px;
+  width:100%;
+  padding:50px;
+  border-radius:26px;
+  text-align:center;
+  box-shadow:0 25px 60px rgba(0,0,0,.8);
+  color:#eee;
+  animation:fadeUp 0.8s ease forwards;
+}
 
-    body.dark .card {
-      background: #1f1f1f;
-      color: #eee;
-    }
+.card > *{
+  animation:fadeUp 0.9s ease forwards;
+}
 
-    h1 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
+h1{
+  margin:0;
+  font-size:34px;
+  color:#fff;
+}
 
-    body.dark h1 {
-      color: #90caf9;
-    }
+.title{
+  font-size:17px;
+  color:#aaa;
+  margin-top:6px;
+}
 
-    p {
-      color: #555;
-      font-size: 15px;
-    }
+.ambition{
+  font-size:16px;
+  color:#ccc;
+  margin:18px 0 28px;
+}
 
-    body.dark p {
-      color: #ccc;
-    }
+.profile{
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  border:4px solid #333;
+  margin:25px 0;
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+.section{
+  margin-top:35px;
+}
 
-    ul li {
-      background: #f1f1f1;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:18px;
+}
 
-    body.dark ul li {
-      background: #2c2c2c;
-    }
+.btn{
+  padding:16px;
+  border-radius:12px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+  transition:0.2s;
+}
 
-    .profile {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 15px 0;
-      border: 4px solid #ddd;
-    }
+.btn:hover{opacity:.9;}
+.btn:active{transform:scale(1.06);}
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
+.whatsapp{background:#25d366;}
+.phone{background:#37474f;}
+.call{background:#4caf50;}
+.projects{background:#2196f3;}
+.cv{background:#9c27b0;}
 
-    .btn {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      color: white;
-      text-decoration: none;
-    }
+/* ===== Social ===== */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:20px;
+}
 
-    .btn-whatsapp {
-      background: #25d366;
-    }
+.social a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.25s;
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
+}
 
-    .btn-projects {
-      background: #2196f3;
-    }
+.social a:hover{
+  transform:translateY(-6px) scale(1.15);
+}
 
-    .btn-toggle {
-      background: #9c27b0;
-      margin-top: 15px;
-    }
-  </style>
+.facebook{background:#1877f2;}
+.instagram{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+.tiktok{background:#000;}
+.github{background:#24292e;}
+
+.social svg{
+  width:26px;
+  fill:#fff;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>رحلتي مع HTML</h1>
+<div class="card">
+  <h1>Noveer Nakhal</h1>
+  <div class="title">Front-End Beginner | HTML & CSS</div>
 
-    <h3>من أنا؟</h3>
-    <p>أنا شخص قررت أغير نفسي وأدخل عالم البرمجة خطوة بخطوة.</p>
+  <p class="ambition">
+    My journey has begun — and the best is yet to come 🚀
+  </p>
 
-    <h3>أهدافي في 2026</h3>
-    <ul>
-      <li>تعلم HTML</li>
-      <li>تعلم CSS</li>
-      <li>تعلم JavaScript</li>
-      <li>تحقيق دخل من البرمجة</li>
-    </ul>
+  <img src="me.jpg" class="profile" alt="Noveer">
 
-    <h3>صورتي</h3>
-    <img class="profile" src="https://i.imgur.com/8Km9tLL.jpg">
-
-    <h3>تواصل معي</h3>
+  <div class="section">
+    <h2>📞 تواصل</h2>
     <div class="buttons">
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/201501369699?text=السلام%20عليكم%20حابب%20اتواصل%20معك"
-         target="_blank">
-        واتساب
-      </a>
-
-      <a class="btn btn-projects" href="projects.html">
-  مشاريعي
-      </a>
+      <a class="btn phone" href="tel:01022523815">📱 01022523815</a>
+      <a class="btn phone" href="tel:01289835935">📱 01289835935</a>
+      <a class="btn whatsapp" href="https://wa.me/201501369699" target="_blank">💬 WhatsApp</a>
+      <a class="btn call" href="tel:01289835935">☎️ مكالمة مباشرة</a>
     </div>
-
-    <button class="btn btn-toggle" onclick="toggleMode()">
-      تغيير الوضع
-    </button>
   </div>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
+  <div class="section">
+    <h2>🌐 السوشيال</h2>
+    <div class="social">
+      <a class="facebook" href="https://www.facebook.com/share/17nwSNU378/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12"/></svg>
+      </a>
+
+      <a class="instagram" href="https://www.instagram.com/noveer_nakhal" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
+      </a>
+
+      <a class="tiktok" href="https://www.tiktok.com/@noveer_nakhal" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2v13.5a2.5 2.5 0 1 1-2.5-2.5"/></svg>
+      </a>
+
+      <a class="github" href="https://github.com/Noveer-777" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 .5A12 12 0 0 0 0 12.8a12 12 0 0 0 8.2 11.4c.6.1.8-.3.8-.6v-2"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="buttons">
+      <a class="btn projects" href="projects.html">🚀 صفحة مشاريعي</a>
+      <a class="btn cv" href="cv.html">📄 CV</a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
